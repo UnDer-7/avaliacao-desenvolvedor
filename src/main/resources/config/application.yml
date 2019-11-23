@@ -1,0 +1,14 @@
+spring:
+    profiles:
+        active: dev
+    application:
+        name: Avaliacao de Desenvolvedor
+    jpa:
+        hibernate:
+            ddl-auto: none
+server:
+    port: 8080
+jwt:
+    secret: useSuaCriatividadeAquiEuNaoTenho
+    # 1 mes
+    expiration: 2629746000

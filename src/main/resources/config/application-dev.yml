@@ -1,0 +1,22 @@
+logging:
+    level:
+        ROOT: info
+spring:
+    devtools:
+        restart:
+            enabled: true
+        livereload:
+            enabled: true
+    datasource:
+      type: com.zaxxer.hikari.HikariDataSource
+      url: jdbc:h2:mem:devDB
+      driver-class-name: org.h2.Driver
+      username: admin
+      password: admin
+      platform: org.hibernate.dialect.H2Dialect
+    h2:
+      console:
+        enabled: true
+    jpa:
+        database: h2
+        show-sql: true
