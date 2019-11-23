@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet author="Mateus Cardoso" id="2">
+        <createTable tableName="clientes">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="clientes_pk"/>
+            </column>
+            <column name="nome" type="VARCHAR(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="cpf" type="CHAR(11)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="cep" type="VARCHAR(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="logradouro" type="VARCHAR(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="bairro" type="VARCHAR(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="localidade" type="VARCHAR(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="uf" type="VARCHAR(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="unidade" type="VARCHAR(255)" />
+            <column name="ibge" type="VARCHAR(255)" />
+            <column name="complemento" type="VARCHAR(255)" />
+
+            <column name="created_at" type="TIMESTAMP WITHOUT TIME ZONE" defaultValueComputed="current_timestamp">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

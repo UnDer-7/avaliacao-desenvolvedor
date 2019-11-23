@@ -3,19 +3,19 @@
     <changeSet author="Mateus Cardoso" id="1">
         <createTable tableName="users">
             <column autoIncrement="true" name="id" type="BIGINT">
-                <constraints primaryKey="true" primaryKeyName="usersPK"/>
+                <constraints primaryKey="true" primaryKeyName="users_pk" />
             </column>
             <column name="login" type="VARCHAR(255)">
-                <constraints nullable="false"/>
+                <constraints nullable="false" />
             </column>
             <column name="password" type="VARCHAR(255)">
-                <constraints nullable="false"/>
+                <constraints nullable="false" />
             </column>
             <column name="role" type="VARCHAR(255)">
-                <constraints nullable="false"/>
+                <constraints nullable="false" />
             </column>
-            <column name="created_at" type="TIMESTAMP WITHOUT TIME ZONE" defaultValueComputed="current_timestamp">
-                <constraints nullable="false"/>
+            <column name="created_at" type="DATE" defaultValueComputed="current_timestamp">
+                <constraints nullable="false" />
             </column>
         </createTable>
         <sql>ALTER TABLE users ADD CONSTRAINT check_roles CHECK (role = 'ADMIN' OR role = 'COMUM')</sql>
