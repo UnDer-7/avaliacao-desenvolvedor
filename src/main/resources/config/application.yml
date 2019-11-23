@@ -12,6 +12,6 @@ spring:
 server:
     port: 8080
 jwt:
-    secret: useSuaCriatividadeAquiEuNaoTenho
-    # 1 mes
-    expiration: 2629746000
+    secret: 562455166
+    # 24 horas
+    expiration: 86400000

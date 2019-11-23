@@ -24,6 +24,7 @@ public class Telefone extends BaseModelAbstract {
   @Column(name = "nome", nullable = false)
   private String numero;
 
+  @Column(name = "tipo", nullable = false)
   @Enumerated(EnumType.STRING)
   private TipoTelefone tipoTelefone;
 

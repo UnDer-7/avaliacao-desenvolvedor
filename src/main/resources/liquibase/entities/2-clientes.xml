@@ -31,7 +31,7 @@
             <column name="ibge" type="VARCHAR(255)" />
             <column name="complemento" type="VARCHAR(255)" />
 
-            <column name="created_at" type="TIMESTAMP WITHOUT TIME ZONE" defaultValueComputed="current_timestamp">
+            <column name="created_at" type="DATE" defaultValueComputed="current_timestamp">
                 <constraints nullable="false" />
             </column>
         </createTable>

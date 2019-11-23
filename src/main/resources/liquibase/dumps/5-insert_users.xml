@@ -3,12 +3,12 @@
     <changeSet author="Mateus Cardoso" id="5">
         <insert tableName="users">
             <column name="login" value="admin" />
-            <column name="password" value="123456" />
+            <column name="password" value="$2y$12$Je6OWTg0hh.Ie/kISwxJo.ehWUNuXti6yk4f74BG7oA45NkDIvvuS" />
             <column name="role" value="ADMIN" />
         </insert>
         <insert tableName="users">
             <column name="login" value="comum" />
-            <column name="password" value="123456" />
+            <column name="password" value="$2y$12$Je6OWTg0hh.Ie/kISwxJo.ehWUNuXti6yk4f74BG7oA45NkDIvvuS" />
             <column name="role" value="COMUM" />
         </insert>
     </changeSet>
