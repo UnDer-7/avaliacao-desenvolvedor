@@ -22,6 +22,7 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 @AllArgsConstructor
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
   private static final String[] PUBLIC_ENDPOINT = {
+    "/h2-console/**"
   };
 
   private final UserDetailsService userDetailsService;
@@ -31,6 +32,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
   protected void configure(final HttpSecurity httpSecurity) throws Exception {
     httpSecurity
       .cors()
+      .and()
+      .headers()
+      .frameOptions()
+      .disable()
       .and()
       .csrf()
       .disable()

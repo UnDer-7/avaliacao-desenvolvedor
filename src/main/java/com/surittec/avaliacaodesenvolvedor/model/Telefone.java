@@ -21,7 +21,7 @@ import javax.persistence.Table;
 @Table(name = "telefones")
 @EqualsAndHashCode(callSuper = true)
 public class Telefone extends BaseModelAbstract {
-  @Column(name = "nome", nullable = false)
+  @Column(name = "numero", nullable = false)
   private String numero;
 
   @Column(name = "tipo", nullable = false)
@@ -30,6 +30,6 @@ public class Telefone extends BaseModelAbstract {
 
   @ManyToOne
   @JsonIgnore
-  @JoinColumn(name = "cliente_id", nullable = false)
+  @JoinColumn(name = "cliente_id")
   private Cliente cliente;
 }

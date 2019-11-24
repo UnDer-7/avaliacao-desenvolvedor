@@ -1,8 +1,9 @@
 package com.surittec.avaliacaodesenvolvedor.security;
 
 import com.surittec.avaliacaodesenvolvedor.model.User;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -10,24 +11,24 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 import java.util.Collections;
 
-@NoArgsConstructor
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class UserDetailsImpl implements UserDetails {
   private static final long serialVersionUID = 1704306946201419444L;
 
   @Getter
-  private Integer id;
+  private final Integer id;
 
-  private String login;
-  private String password;
-  private Collection<? extends GrantedAuthority> authorities;
+  private final String login;
+  private final String password;
+  private final Collection<? extends GrantedAuthority> authorities;
 
-  UserDetailsImpl(User user) {
+  public UserDetailsImpl(User user) {
     this.id = Math.toIntExact(user.getId());
     this.login = user.getLogin();
     this.password = user.getPassword();
 
     final SimpleGrantedAuthority authority = new SimpleGrantedAuthority(user.getUserRole().getDescricao());
-    this.authorities = Collections.singleton(authority);
+    this.authorities = Collections.unmodifiableCollection(Collections.singleton(authority));
   }
 
   @Override

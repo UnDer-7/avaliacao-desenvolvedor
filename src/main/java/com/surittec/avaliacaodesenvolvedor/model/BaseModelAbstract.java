@@ -26,7 +26,6 @@ abstract class BaseModelAbstract implements Serializable {
   private Long id;
 
   @Getter
-  @Setter
   @Column(name = "created_at")
-  private LocalDate createdAt;
+  private final LocalDate createdAt = LocalDate.now();
 }

@@ -20,7 +20,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
   public UserDetails loadUserByUsername(final String login) {
     final User user = userRepository
       .findByLogin(login)
-      .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Usuario " + login + " nao encontrado"));
+      .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Usuario " + login + " nao encontrado"));
     return new UserDetailsImpl(user);
   }
 }

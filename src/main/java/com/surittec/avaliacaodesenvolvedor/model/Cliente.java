@@ -58,9 +58,15 @@ public class Cliente extends BaseModelAbstract {
   @Column(name = "complemento")
   private String complemento;
 
-  @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, orphanRemoval = true)
+  @OneToMany(
+    mappedBy = "cliente",
+    cascade = CascadeType.PERSIST,
+    orphanRemoval = true)
   private List<Telefone> telefones;
 
-  @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, orphanRemoval = true)
+  @OneToMany(
+    mappedBy = "cliente",
+    cascade = CascadeType.PERSIST,
+    orphanRemoval = true)
   private List<Email> emails;
 }
