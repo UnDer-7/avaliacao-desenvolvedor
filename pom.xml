@@ -18,7 +18,9 @@
         <java.version>1.8</java.version>
         <downloadSources>true</downloadSources>
         <downloadJavadocs>true</downloadJavadocs>
+
         <liquibase.version>3.6.3</liquibase.version>
+        <lombok.version>1.18.10</lombok.version>
     </properties>
 
     <dependencies>
@@ -81,6 +83,7 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
+            <version>${lombok.version}</version>
         </dependency>
         <dependency>
             <groupId>io.jsonwebtoken</groupId>

@@ -60,13 +60,13 @@ public class Cliente extends BaseModelAbstract {
 
   @OneToMany(
     mappedBy = "cliente",
-    cascade = CascadeType.PERSIST,
+    cascade = CascadeType.ALL,
     orphanRemoval = true)
   private List<Telefone> telefones;
 
   @OneToMany(
     mappedBy = "cliente",
-    cascade = CascadeType.PERSIST,
+    cascade = CascadeType.ALL,
     orphanRemoval = true)
   private List<Email> emails;
 }

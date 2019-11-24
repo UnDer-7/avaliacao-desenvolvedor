@@ -23,6 +23,8 @@ public class ClienteServiceImpl implements ClienteService {
       throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Usuario nao tem permissao para criar cliente");
     }
 
+    cliente.getEmails().forEach(item -> item.setCliente(cliente));
+    cliente.getTelefones().forEach(item -> item.setCliente(cliente));
     return clienteRepository.save(cliente);
   }
 }
