@@ -9,6 +9,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.Valid;
 import javax.validation.constraints.NotEmpty;
 import java.util.List;
 
@@ -58,12 +59,14 @@ public class Cliente extends BaseModelAbstract {
   @Column(name = "complemento")
   private String complemento;
 
+  @Valid
   @OneToMany(
     mappedBy = "cliente",
     cascade = CascadeType.ALL,
     orphanRemoval = true)
   private List<Telefone> telefones;
 
+  @Valid
   @OneToMany(
     mappedBy = "cliente",
     cascade = CascadeType.ALL,

@@ -2,6 +2,12 @@ package com.surittec.avaliacaodesenvolvedor.service;
 
 import com.surittec.avaliacaodesenvolvedor.model.Cliente;
 
+import java.util.List;
+
 public interface ClienteService {
   Cliente create(final Cliente cliente);
+
+  List<Cliente> findAll();
+
+  void delete(long clienteId);
 }

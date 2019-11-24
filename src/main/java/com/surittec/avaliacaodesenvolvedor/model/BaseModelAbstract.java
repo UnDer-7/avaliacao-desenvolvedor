@@ -1,5 +1,6 @@
 package com.surittec.avaliacaodesenvolvedor.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -9,7 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import java.io.Serializable;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 /**
  * @author Mateus Cardoso
@@ -27,5 +28,6 @@ abstract class BaseModelAbstract implements Serializable {
 
   @Getter
   @Column(name = "created_at")
-  private final LocalDate createdAt = LocalDate.now();
+  @JsonIgnore
+  private final LocalDateTime createdAt = LocalDateTime.now();
 }

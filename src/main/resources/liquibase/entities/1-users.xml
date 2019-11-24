@@ -14,7 +14,7 @@
             <column name="role" type="VARCHAR(255)">
                 <constraints nullable="false" />
             </column>
-            <column name="created_at" type="DATE" defaultValueComputed="current_timestamp">
+            <column name="created_at" type="TIMESTAMP WITHOUT TIME ZONE" defaultValueComputed="current_timestamp">
                 <constraints nullable="false" />
             </column>
         </createTable>

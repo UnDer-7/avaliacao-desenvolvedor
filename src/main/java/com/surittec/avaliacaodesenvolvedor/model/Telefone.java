@@ -12,6 +12,8 @@ import javax.persistence.Enumerated;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 /**
  * @author Mateus Cardoso
@@ -21,9 +23,12 @@ import javax.persistence.Table;
 @Table(name = "telefones")
 @EqualsAndHashCode(callSuper = true)
 public class Telefone extends BaseModelAbstract {
+
+  @NotEmpty
   @Column(name = "numero", nullable = false)
   private String numero;
 
+  @NotNull
   @Column(name = "tipo", nullable = false)
   @Enumerated(EnumType.STRING)
   private TipoTelefone tipoTelefone;

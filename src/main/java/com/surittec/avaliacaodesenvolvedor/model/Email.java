@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
 
 /**
  * @author Mateus Cardoso
@@ -19,6 +20,7 @@ import javax.persistence.Table;
 @EqualsAndHashCode(callSuper = true)
 public class Email extends BaseModelAbstract {
 
+  @NotEmpty
   @Column(name = "email", nullable = false)
   @javax.validation.constraints.Email
   private String email;
