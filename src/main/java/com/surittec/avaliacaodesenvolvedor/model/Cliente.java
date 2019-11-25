@@ -26,7 +26,7 @@ public class Cliente extends BaseModelAbstract {
   @Column(name = "nome", nullable = false)
   private String nome;
 
-  @CPF
+//  @CPF
   @Column(name = "cpf", nullable = false)
   private String cpf;
 
