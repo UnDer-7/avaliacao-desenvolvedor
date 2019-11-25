@@ -9,5 +9,7 @@ public interface ClienteService {
 
   List<Cliente> findAll();
 
-  void delete(long clienteId);
+  Cliente findOne(final long ClienteId);
+
+  void delete(final long clienteId);
 }

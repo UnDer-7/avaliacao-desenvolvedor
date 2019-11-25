@@ -48,6 +48,14 @@ public class ClienteServiceImpl implements ClienteService {
   }
 
   @Override
+  public Cliente findOne(final long clienteId) {
+    logger.info("Getting one Cliente");
+
+    return clienteRepository.findById(clienteId)
+      .orElseThrow(() -> new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Usuario nao encontrado"));
+  }
+
+  @Override
   @Transactional
   public void delete(final long clienteId) {
     canProceed();

@@ -61,8 +61,16 @@ public class ClienteResource {
     return ResponseEntity.ok(clientes);
   }
 
+  @GetMapping("/{clienteId}")
+  public ResponseEntity<Cliente> getCliente(@PathVariable final long clienteId) {
+    logger.debug("GET Request to get on Cliente | ID: {}", clienteId);
+
+    final Cliente cliente = clienteService.findOne(clienteId);
+    return ResponseEntity.ok(cliente);
+  }
+
   @DeleteMapping("/{clienteId}")
-  public ResponseEntity<Void> deleteCliente(@PathVariable long clienteId) {
+  public ResponseEntity<Void> deleteCliente(@PathVariable final long clienteId) {
     logger.debug("DELETE Request to delete an Cliente | ID: {}", clienteId);
 
     clienteService.delete(clienteId);
