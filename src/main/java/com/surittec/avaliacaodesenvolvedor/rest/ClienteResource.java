@@ -42,10 +42,10 @@ public class ClienteResource {
     return ResponseEntity.status(HttpStatus.CREATED).body(clienteSaved);
   }
 
-  @PostMapping("/{clienteId}")
-  public ResponseEntity<Cliente> updateCliente(@PathVariable final Long clienteId, @Valid @RequestBody final Cliente cliente) {
+  @PutMapping
+  public ResponseEntity<Cliente> updateCliente(@Valid @RequestBody final Cliente cliente) {
     logger.debug("PUT Request to update Cliente: {}", cliente);
-    if (cliente.getId() == null || clienteId == null) {
+    if (cliente.getId() == null) {
       throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Cliente nao possui um Id");
     }
 
