@@ -19,7 +19,7 @@
         <downloadSources>true</downloadSources>
         <downloadJavadocs>true</downloadJavadocs>
 
-        <liquibase.version>3.6.3</liquibase.version>
+        <liquibase.version>4.8.0</liquibase.version>
         <lombok.version>1.18.10</lombok.version>
     </properties>
 
